@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="renderer" content="webkit">
+<title>后台管理中心</title>
+<link rel="stylesheet" href="../static/css/pintuer.css">
+<link rel="stylesheet" href="../static/css/admin.css">
+<script src="../static/js/jquery-1.11.1.min.js"></script>
+</head>
+<body style="background-color: #f2f9fd;">
+	<div class="header bg-main">
+		<div class="logo margin-big-left fadein-top">
+			<h1>
+				<img src="../static/images/y.jpg" class="radius-circle rotate-hover"
+					height="50" alt="" /> 学生大数据分析系统
+			</h1>
+		</div>
+		<div class="head-l">
+			<a class="button button-little bg-blue" href="/delete"><span
+				class="icon-power-off"></span> 退出登录</a>
+		</div>
+	</div>
+	<div class="leftnav" style="background-color: #b3b3b3">
+		<div class="leftnav-title">
+			<strong><span class="icon-list"></span>菜单列表</strong>
+		</div>
+		<h2>
+			<span class="icon-user"></span>学生基本信息
+		</h2>
+		<ul style="display: block">
+
+			<li><a href="/main" target="right"><span
+                    class="icon-caret-right"></span>2016级学生信息展示</a></li>
+			<li><a href="/searchGrade" target="right"><span
+					class="icon-caret-right"></span>成绩分析</a></li>
+			<li><a href="#" target="right"><span
+					class="icon-caret-right"></span>修改密码</a></li>
+
+		</ul>
+		<h2>
+			<span class="icon-pencil-square-o"></span>学生管理
+		</h2>
+		<ul>
+			<li><a href="/search" target="right"><span
+					class="icon-caret-right"></span>动态分析</a></li>
+			<li><a href="/relationgraph" target="right"><span
+					class="icon-caret-right"></span>关系图谱</a></li>
+			<li><a href="/searchStudentPortraits" target="right"><span
+					class="icon-caret-right"></span>学生画像</a></li>
+{#			<li><a href="#" target="right"><span#}
+{#					class="icon-caret-right"></span>删除学生</a></li>#}
+		</ul>
+		<h2>
+			<span class="icon-pencil-square-o"></span>实时监测
+		</h2>
+	<ul>
+			<li><a href="#" target="right"><span
+					class="icon-caret-right"></span>信息共享</a></li>
+			<li><a href="#" target="right"><span
+					class="icon-caret-right"></span>教学统计</a></li>
+			<li><a href="#" target="right"><span
+					class="icon-caret-right"></span>网站统计</a></li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		$(function() {
+			$(".leftnav h2").click(function() {
+				$(this).next().slideToggle(200);
+				$(this).toggleClass("on");
+			})
+			$(".leftnav ul li a").click(function() {
+				$("#a_leader_txt").text($(this).text());
+				$(".leftnav ul li a").removeClass("on");
+				$(this).addClass("on");
+			})
+		});
+	</script>
+	<ul class="bread">
+		<li><a href="/1" target="right" class="icon-home"> 首页</a>
+		</li>
+		<li><a href="/1" id="a_leader_txt">网站信息</a></li>
+	</ul>
+	<div class="admin">
+		<iframe src="/1" name="right" width="100%" height="100%"></iframe>
+	</div>
+
+</body>
+</html>
